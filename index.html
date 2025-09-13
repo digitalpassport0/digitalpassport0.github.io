@@ -542,7 +542,7 @@
                     <div class="glass-card p-8 rounded-3xl shadow-2xl">
                         <div class="bg-gradient-to-r from-indigo-600 to-purple-600 p-6 rounded-2xl mb-6">
                             <div class="flex items-center justify-between text-white mb-4">
-                                <h3 class="text-lg font-bold">Winnie Atieno</h3>
+                                <h3 class="text-lg font-bold">Amara Okafor</h3>
                                 <div class="text-sm bg-white bg-opacity-20 px-3 py-1 rounded-full">Verified</div>
                             </div>
                             <div class="grid grid-cols-2 gap-4 text-sm">
@@ -772,7 +772,6 @@
                                             </div>
                                             <div class="flex justify-between text-white text-sm">
                                                 <span>Verifier:</span>
-
                                                 <span>TechSkills Africa</span>
                                             </div>
                                         </div>
@@ -965,7 +964,7 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-900">Payone Ochola</h3>
+                        <h3 class="text-xl font-bold text-slate-900">Payene Ochola</h3>
                         <p class="text-indigo-600 font-medium">Co-Founder & CEO</p>
                         <p class="mt-3 text-slate-600 text-sm">Leading the vision and strategy of DigitalPassport</p>
                         <a href="https://www.linkedin.com/in/payene-ochola-74222b383" target="_blank" class="mt-4 inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors">
@@ -1530,7 +1529,7 @@
 
             <div class="border-t border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-slate-400 mb-4 md:mb-0">
-                    © 2025 DigitalPassport. All rights reserved.
+                    © 2024 DigitalPassport. All rights reserved.
                 </p>
                 <div class="flex space-x-6 text-sm">
                     <a href="#" class="text-slate-400 hover:text-white transition-colors">Privacy Policy</a>
@@ -1541,10 +1540,147 @@
         </div>
     </footer>
 
+    <!-- Legal Documents Modal -->
+    <div id="legalModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 id="legalModalTitle" class="text-2xl font-bold text-slate-900">Document Title</h3>
+                    <button id="closeLegalModal" class="text-slate-400 hover:text-slate-600">
+                        <i data-feather="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <div id="legalModalContent" class="prose prose-slate max-w-none">
+                    <!-- Content will be loaded here -->
+                </div>
+                <div class="mt-6 pt-6 border-t border-slate-200">
+                    <button id="acceptLegalBtn" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
+                        I Understand
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script>
-        // Passport Form Handling
+        // Legal Documents Content
+        const legalDocuments = {
+            'privacy': {
+                title: 'Privacy Policy',
+                content: `
+                    <h3 class="text-xl font-bold mb-4">Last Updated: September 13, 2024</h3>
+                    <p class="mb-4">This Privacy Policy describes how DigitalPassport collects, uses, and discloses your personal information when you use our services.</p>
+                    
+                    <h4 class="font-bold mt-6 mb-2">1. Information We Collect</h4>
+                    <p class="mb-4">We collect information that you provide directly to us, such as when you create an account, complete a form, or contact us. This may include your name, email address, phone number, and other identifying information.</p>
+                    
+                    <h4 class="font-bold mt-6 mb-2">2. How We Use Your Information</h4>
+                    <p class="mb-4">We use the information we collect to provide, maintain, and improve our services, process transactions, send you related information, and respond to your comments and questions.</p>
+                    
+                    <h4 class="font-bold mt-6 mb-2">3. Information Sharing</h4>
+                    <p class="mb-4">We do not sell or share your personal information with third parties except as described in this policy or with your consent.</p>
+                    
+                    <p class="text-sm text-slate-500 mt-8">This is a demo privacy policy. In a production environment, please consult with legal counsel to ensure compliance with all applicable laws and regulations.</p>
+                `
+            },
+            'terms': {
+                title: 'Terms of Service',
+                content: `
+                    <h3 class="text-xl font-bold mb-4">Last Updated: September 13, 2024</h3>
+                    <p class="mb-4">By accessing or using DigitalPassport's services, you agree to be bound by these Terms of Service.</p>
+                    
+                    <h4 class="font-bold mt-6 mb-2">1. Account Registration</h4>
+                    <p class="mb-4">You must be at least 18 years old to use our services. You are responsible for maintaining the confidentiality of your account credentials.</p>
+                    
+                    <h4 class="font-bold mt-6 mb-2">2. User Responsibilities</h4>
+                    <p class="mb-4">You agree not to use our services for any unlawful purpose or in any way that could damage, disable, or impair the service.</p>
+                    
+                    <h4 class="font-bold mt-6 mb-2">3. Intellectual Property</h4>
+                    <p class="mb-4">All content and materials available on our platform are the property of DigitalPassport and are protected by intellectual property laws.</p>
+                    
+                    <p class="text-sm text-slate-500 mt-8">Please read these terms carefully before using our services.</p>
+                `
+            },
+            'cookie': {
+                title: 'Cookie Policy',
+                content: `
+                    <h3 class="text-xl font-bold mb-4">Last Updated: September 13, 2024</h3>
+                    <p class="mb-4">This Cookie Policy explains how DigitalPassport uses cookies and similar technologies to recognize you when you visit our website.</p>
+                    
+                    <h4 class="font-bold mt-6 mb-2">1. What Are Cookies</h4>
+                    <p class="mb-4">Cookies are small data files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently.</p>
+                    
+                    <h4 class="font-bold mt-6 mb-2">2. How We Use Cookies</h4>
+                    <p class="mb-4">We use cookies for several purposes, including authentication, security, analytics, and to remember your preferences.</p>
+                    
+                    <h4 class="font-bold mt-6 mb-2">3. Your Choices</h4>
+                    <p class="mb-4">You can set your browser to refuse all or some browser cookies. However, if you disable or refuse cookies, please note that some parts of our website may become inaccessible.</p>
+                    
+                    <p class="text-sm text-slate-500 mt-8">By continuing to use our website, you consent to our use of cookies as described in this policy.</p>
+                `
+            }
+        };
+
+        // Initialize when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
+            // Legal Documents Modal Handling
+            const legalModal = document.getElementById('legalModal');
+            const legalModalTitle = document.getElementById('legalModalTitle');
+            const legalModalContent = document.getElementById('legalModalContent');
+            const closeLegalModal = document.getElementById('closeLegalModal');
+            const acceptLegalBtn = document.getElementById('acceptLegalBtn');
+            
+            // Open legal document
+            function openLegalDocument(type) {
+                if (legalDocuments[type]) {
+                    legalModalTitle.textContent = legalDocuments[type].title;
+                    legalModalContent.innerHTML = legalDocuments[type].content;
+                    legalModal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                }
+            }
+            
+            // Close legal document
+            function closeLegalDocument() {
+                legalModal.classList.add('hidden');
+                document.body.style.overflow = ''; // Re-enable scrolling
+            }
+            
+            // Event listeners for legal document links
+            document.querySelectorAll('a[href*="#"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const text = this.textContent.toLowerCase();
+                    if (text.includes('privacy')) {
+                        e.preventDefault();
+                        openLegalDocument('privacy');
+                    } else if (text.includes('terms')) {
+                        e.preventDefault();
+                        openLegalDocument('terms');
+                    } else if (text.includes('cookie')) {
+                        e.preventDefault();
+                        openLegalDocument('cookie');
+                    }
+                });
+            });
+            
+            // Close modal when clicking X, Accept button, or outside the modal
+            [closeLegalModal, acceptLegalBtn, legalModal].forEach(element => {
+                if (element) {
+                    element.addEventListener('click', (e) => {
+                        if (e.target === legalModal || e.target === closeLegalModal || e.target === acceptLegalBtn) {
+                            closeLegalDocument();
+                        }
+                    });
+                }
+            });
+            
+            // Prevent modal from closing when clicking inside the modal content
+            document.querySelector('#legalModal > div').addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+            
+            // Passport Form Handling
             const openBtn = document.getElementById('openPassportForm');
             const closeBtn = document.getElementById('closePassportForm');
             const cancelBtn = document.getElementById('cancelPassportForm');
@@ -1730,5 +1866,3 @@
         });
     </script>
 </body>
-
-
