@@ -320,12 +320,12 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#solution" class="text-slate-700 hover:text-indigo-600 font-medium transition-colors">Solution</a>
                     <a href="#process" class="text-slate-700 hover:text-indigo-600 font-medium transition-colors">Process</a>
-                    <a href="#impact" class="text-slate-700 hover:text-indigo-600 font-medium transition-colors">Impact</a>
-                    <a href="#team" class="text-slate-700 hover:text-indigo-600 font-medium transition-colors">Team</a>
-                    <button class="btn-glow px-6 py-2 rounded-full font-semibold">
+                    <a href="#pricing" class="px-4 py-2 text-slate-700 hover:text-indigo-600 font-medium transition-colors">Pricing</a>
+                    <a href="#resources" class="px-4 py-2 text-slate-700 hover:text-indigo-600 font-medium transition-colors">Resources</a>
+                    <a href="#team" class="px-4 py-2 text-slate-700 hover:text-indigo-600 font-medium transition-colors">Team</a>
+                    <a href="#getting-started" class="block w-full text-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors mt-4">
                         Get Started
-                        <i data-feather="arrow-right" class="w-4 h-4 ml-2 inline"></i>
-                    </button>
+                    </a>
                 </div>
 
                 <button class="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors" id="mobileMenuBtn">
@@ -346,7 +346,8 @@
                 <nav class="space-y-4">
                     <a href="#solution" class="block py-3 text-slate-700 hover:text-indigo-600 font-medium">Solution</a>
                     <a href="#process" class="block py-3 text-slate-700 hover:text-indigo-600 font-medium">Process</a>
-                    <a href="#impact" class="block py-3 text-slate-700 hover:text-indigo-600 font-medium">Impact</a>
+                    <a href="#pricing" class="block py-3 text-slate-700 hover:text-indigo-600 font-medium">Pricing</a>
+                    <a href="#resources" class="block py-3 text-slate-700 hover:text-indigo-600 font-medium">Resources</a>
                     <a href="#team" class="block py-3 text-slate-700 hover:text-indigo-600 font-medium">Team</a>
                     <button class="btn-glow w-full py-3 mt-6 rounded-lg font-semibold">Get Started</button>
                 </nav>
@@ -796,11 +797,22 @@
                                     </p>
                                     <div class="bg-white bg-opacity-10 rounded-lg p-4">
                                         <div class="text-center">
-                                            <div class="w-24 h-24 bg-white bg-opacity-20 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                                                <i data-feather="qr-code" class="w-12 h-12 text-white"></i>
+                                            <div class="relative w-32 h-32 bg-white rounded-lg p-2 mx-auto mb-3 shadow-inner">
+                                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&margin=5&data=%2A%2A%2A%20DEMO%20ONLY%20%2A%2A%2A%0A%0ADigitalPassport%20Demo%20Profile%0A%0AName%3A%20Amina%20Nkosi%0AStatus%3A%20Student%0A%0AThis%20is%20a%20demonstration%20QR%20code%20for%20DigitalPassport%0A%0Ahttps%3A%2F%2Fdigitalpassport.africa%2Fdemo" 
+                                                     alt="DigitalPassport Demo QR Code - For Demonstration Purposes Only" 
+                                                     class="w-full h-full object-contain">
+                                                <div class="absolute inset-0 flex items-center justify-center">
+                                                    <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                                                        <i data-feather="shield" class="w-4 h-4 text-indigo-600"></i>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="text-white font-semibold mb-1">Instant Share</div>
-                                            <div class="text-white opacity-80 text-sm">One-click verification access</div>
+                                            <div class="text-white opacity-80 text-sm mb-2">Scan to view profile</div>
+                                            <button class="text-xs bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-3 py-1 rounded-full transition-all flex items-center mx-auto">
+                                                <i data-feather="share-2" class="w-3 h-3 mr-1"></i>
+                                                Share QR
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -1079,64 +1091,104 @@
     </section>
 
     <!-- Sample Passports Section -->
-    <section id="passports" class="py-24 bg-gradient-to-br from-slate-50 to-blue-50">
+    <section id="passports" class="py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <span class="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
-                    DIGITAL PASSPORT
+                <span class="inline-block px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-semibold mb-4">
+                    SAMPLE PASSPORTS
                 </span>
-                <h2 class="text-3xl font-bold text-slate-900 mb-6">
-                    Your Digital Identity, Securely Stored
-                </h2>
-                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                <h2 class="text-4xl font-bold text-slate-900 mb-6">Digital Identity, Securely Stored</h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
                     Our digital passports provide a secure, verifiable way to manage your identity and credentials
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-8">
                 <!-- Student Passport -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up">
-                    <div class="h-48 bg-gradient-to-br from-blue-600 to-indigo-700 p-6 flex flex-col justify-between text-white">
-                        <div class="flex justify-between items-start">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-slate-100" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Passport Cover -->
+                    <div class="h-48 bg-gradient-to-br from-blue-600 to-cyan-500 p-6 flex flex-col justify-between text-white relative overflow-hidden">
+                        <!-- Decorative Elements -->
+                        <div class="absolute inset-0 opacity-10">
+                            <div class="absolute -right-10 -top-10 w-40 h-40 bg-white rounded-full"></div>
+                            <div class="absolute -left-10 -bottom-10 w-32 h-32 bg-white rounded-full"></div>
+                        </div>
+                        <!-- Header -->
+                        <div class="flex justify-between items-start z-10">
                             <div>
                                 <h3 class="text-2xl font-bold">Student</h3>
-                                <p class="text-blue-100">Digital Identity</p>
+                                <p class="text-blue-100 text-sm">Digital Identity</p>
                             </div>
                             <div class="text-right">
                                 <div class="text-xs opacity-80">ISSUED BY</div>
-                                <div class="font-semibold">DigitalPassport</div>
+                                <div class="font-medium">DigitalPassport</div>
                             </div>
                         </div>
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <div class="text-xs opacity-80">VALID THRU</div>
-                                <div class="font-semibold">09/30/2025</div>
+                        <!-- Profile Section -->
+                        <div class="flex justify-between items-center z-10">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/30 flex items-center justify-center">
+                                    <span class="text-2xl font-bold text-white">AN</span>
+                                </div>
+                                <div>
+                                    <div class="text-xs opacity-80">STUDENT</div>
+                                    <div class="font-semibold text-lg">Amina Nkosi</div>
+                                </div>
                             </div>
-                            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                                <i data-feather="user" class="w-6 h-6"></i>
+                            <div class="text-right">
+                                <div class="text-xs opacity-80">VALID THRU</div>
+                                <div class="font-medium">09/30/2025</div>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Passport Details -->
                     <div class="p-6">
-                        <div class="space-y-4">
-                            <div>
-                                <div class="text-xs text-slate-500">NAME</div>
-                                <div class="font-medium">Amina Nkosi</div>
-                            </div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <div class="text-xs text-slate-500">STUDENT ID</div>
-                                    <div class="font-mono">STD-2023-4567</div>
+                        <div class="space-y-5">
+                            <!-- ID Section -->
+                            <div class="bg-slate-50 p-4 rounded-lg">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <div class="text-xs text-slate-500 font-medium mb-1">STUDENT ID</div>
+                                        <div class="font-mono text-sm">STD-2023-4567</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-slate-500 font-medium mb-1">INSTITUTION</div>
+                                        <div class="text-sm font-medium">University of Nairobi</div>
+                                    </div>
+                                    <div class="col-span-2">
+                                        <div class="text-xs text-slate-500 font-medium mb-1">FIELD OF STUDY</div>
+                                        <div class="text-sm font-medium">Computer Science</div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <div class="text-xs text-slate-500">INSTITUTION</div>
-                                    <div class="font-medium">University of Nairobi</div>
-                                </div>
                             </div>
-                            <div class="pt-4 border-t border-slate-100">
-                                <div class="flex items-center space-x-2 text-sm">
-                                    <i data-feather="shield" class="w-4 h-4 text-green-500"></i>
-                                    <span class="text-slate-600">Verified Academic Credentials</span>
+                            
+                            <!-- Verification Badge -->
+                            <div class="flex items-center justify-between bg-green-50 p-3 rounded-lg">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                                        <i data-feather="check" class="w-4 h-4 text-green-600"></i>
+                                    </div>
+                                    <span class="text-sm font-medium text-green-800">Verified Identity</span>
+                                </div>
+                                <div class="text-xs text-green-600 bg-white px-2 py-1 rounded-full">Active</div>
+                            </div>
+                            
+                            <!-- QR Code -->
+                            <div class="bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center shadow-sm">
+                                <div class="relative w-28 h-28 bg-white rounded-lg p-2 mb-3 shadow-inner border border-slate-100">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&margin=5&data=STUDENT%20PASSPORT%20%7C%20DEMO%20ONLY%0A%0AName%3A%20Amina%20Nkosi%0AID%3A%20STD-2023-4567%0AInstitution%3A%20University%20of%20Nairobi%0AField%3A%20Computer%20Science%0A%0A%2A%2A%2A%20DEMONSTRATION%20PURPOSES%20ONLY%20%2A%2A%2A%0AThis%20is%20a%20sample%20QR%20code%0A%0AIssued%20by%3A%20DigitalPassport" 
+                                         alt="Student Passport QR Code - Demo Only" 
+                                         class="w-full h-full object-contain">
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                                            <i data-feather="shield" class="w-4 h-4 text-indigo-600"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center text-xs text-slate-600">
+                                    <i data-feather="maximize-2" class="w-3 h-3 mr-1"></i>
+                                    <span>Scan to verify identity</span>
                                 </div>
                             </div>
                         </div>
@@ -1144,48 +1196,109 @@
                 </div>
 
                 <!-- Professional Passport -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 bg-gradient-to-br from-purple-600 to-pink-600 p-6 flex flex-col justify-between text-white">
-                        <div class="flex justify-between items-start">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-slate-100" data-aos="fade-up" data-aos-delay="150">
+                    <!-- Passport Cover -->
+                    <div class="h-48 bg-gradient-to-br from-purple-700 to-pink-600 p-6 flex flex-col justify-between text-white relative overflow-hidden">
+                        <!-- Decorative Elements -->
+                        <div class="absolute inset-0 opacity-10">
+                            <div class="absolute -right-10 -top-10 w-40 h-40 bg-white rounded-full"></div>
+                            <div class="absolute -left-10 -bottom-10 w-32 h-32 bg-white rounded-full"></div>
+                        </div>
+                        <!-- Header -->
+                        <div class="flex justify-between items-start z-10">
                             <div>
                                 <h3 class="text-2xl font-bold">Professional</h3>
-                                <p class="text-purple-100">Digital Identity</p>
+                                <p class="text-purple-100 text-sm">Digital Identity</p>
                             </div>
                             <div class="text-right">
                                 <div class="text-xs opacity-80">ISSUED BY</div>
-                                <div class="font-semibold">DigitalPassport</div>
+                                <div class="font-medium">DigitalPassport</div>
                             </div>
                         </div>
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <div class="text-xs opacity-80">VALID THRU</div>
-                                <div class="font-semibold">12/15/2026</div>
+                        <!-- Profile Section -->
+                        <div class="flex justify-between items-center z-10">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/30 flex items-center justify-center">
+                                    <span class="text-2xl font-bold text-white">KO</span>
+                                </div>
+                                <div>
+                                    <div class="text-xs opacity-80">SOFTWARE ENGINEER</div>
+                                    <div class="font-semibold text-lg">Kwame Osei</div>
+                                </div>
                             </div>
-                            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                                <i data-feather="briefcase" class="w-6 h-6"></i>
+                            <div class="text-right">
+                                <div class="text-xs opacity-80">VALID THRU</div>
+                                <div class="font-medium">12/15/2026</div>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Passport Details -->
                     <div class="p-6">
-                        <div class="space-y-4">
-                            <div>
-                                <div class="text-xs text-slate-500">NAME</div>
-                                <div class="font-medium">Kwame Osei</div>
-                            </div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <div class="text-xs text-slate-500">PROFESSION</div>
-                                    <div class="font-medium">Software Engineer</div>
+                        <div class="space-y-5">
+                            <!-- ID Section -->
+                            <div class="bg-slate-50 p-4 rounded-lg">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <div class="text-xs text-slate-500 font-medium mb-1">LOCATION</div>
+                                        <div class="text-sm font-medium">Accra, Ghana</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-slate-500 font-medium mb-1">MEMBER SINCE</div>
+                                        <div class="text-sm font-medium">2021</div>
+                                    </div>
+                                    <div class="col-span-2">
+                                        <div class="text-xs text-slate-500 font-medium mb-1">SPECIALIZATION</div>
+                                        <div class="text-sm font-medium">Full-Stack Development</div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <div class="text-xs text-slate-500">LOCATION</div>
-                                    <div class="font-medium">Accra, Ghana</div>
+                            </div>
+                            
+                            <!-- Certifications -->
+                            <div class="space-y-2">
+                                <div class="text-xs font-medium text-slate-500">CERTIFICATIONS (3)</div>
+                                <div class="space-y-2">
+                                    <div class="flex items-center space-x-2 text-sm">
+                                        <i data-feather="award" class="w-4 h-4 text-blue-500"></i>
+                                        <span>AWS Certified Developer</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-sm">
+                                        <i data-feather="award" class="w-4 h-4 text-blue-500"></i>
+                                        <span>Google Cloud Professional</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-sm">
+                                        <i data-feather="award" class="w-4 h-4 text-blue-500"></i>
+                                        <span>React.js Certification</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="pt-4 border-t border-slate-100">
-                                <div class="flex items-center space-x-2 text-sm">
-                                    <i data-feather="award" class="w-4 h-4 text-yellow-500"></i>
-                                    <span class="text-slate-600">3+ Verified Certifications</span>
+                            
+                            <!-- Verification Badge -->
+                            <div class="flex items-center justify-between bg-blue-50 p-3 rounded-lg">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <i data-feather="shield" class="w-4 h-4 text-blue-600"></i>
+                                    </div>
+                                    <span class="text-sm font-medium text-blue-800">Verified Professional</span>
+                                </div>
+                                <div class="text-xs text-blue-600 bg-white px-2 py-1 rounded-full">Pro Member</div>
+                            </div>
+                            
+                            <!-- QR Code -->
+                            <div class="bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center shadow-sm">
+                                <div class="relative w-28 h-28 bg-white rounded-lg p-2 mb-3 shadow-inner border border-slate-100">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&margin=5&data=PROFESSIONAL%20PASSPORT%20%7C%20DEMO%20ONLY%0A%0AName%3A%20Kwame%20Osei%0ATitle%3A%20Senior%20Software%20Engineer%0ACompany%3A%20TechSolutions%20Ltd.%0AExperience%3A%205%2B%20years%0ASkills%3A%20Full-Stack%20Development%0A%0A%2A%2A%2A%20DEMONSTRATION%20PURPOSES%20ONLY%20%2A%2A%2A%0AThis%20is%20a%20sample%20QR%20code%0A%0AIssued%20by%3A%20DigitalPassport" 
+                                         alt="Professional Passport QR Code - Demo Only" 
+                                         class="w-full h-full object-contain">
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                                            <i data-feather="shield" class="w-4 h-4 text-indigo-600"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center text-xs text-slate-600">
+                                    <i data-feather="maximize-2" class="w-3 h-3 mr-1"></i>
+                                    <span>Scan to verify profile</span>
                                 </div>
                             </div>
                         </div>
@@ -1193,61 +1306,129 @@
                 </div>
 
                 <!-- Business Passport -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 bg-gradient-to-br from-emerald-600 to-teal-600 p-6 flex flex-col justify-between text-white">
-                        <div class="flex justify-between items-start">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-slate-100" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Passport Cover -->
+                    <div class="h-48 bg-gradient-to-br from-emerald-600 to-teal-500 p-6 flex flex-col justify-between text-white relative overflow-hidden">
+                        <!-- Decorative Elements -->
+                        <div class="absolute inset-0 opacity-10">
+                            <div class="absolute -right-10 -top-10 w-40 h-40 bg-white rounded-full"></div>
+                            <div class="absolute -left-10 -bottom-10 w-32 h-32 bg-white rounded-full"></div>
+                        </div>
+                        <!-- Header -->
+                        <div class="flex justify-between items-start z-10">
                             <div>
                                 <h3 class="text-2xl font-bold">Business</h3>
-                                <p class="text-emerald-100">Digital Identity</p>
+                                <p class="text-emerald-100 text-sm">Digital Identity</p>
                             </div>
                             <div class="text-right">
                                 <div class="text-xs opacity-80">ISSUED BY</div>
-                                <div class="font-semibold">DigitalPassport</div>
+                                <div class="font-medium">DigitalPassport</div>
                             </div>
                         </div>
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <div class="text-xs opacity-80">VALID THRU</div>
-                                <div class="font-semibold">06/30/2027</div>
+                        <!-- Profile Section -->
+                        <div class="flex justify-between items-center z-10">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/30 flex items-center justify-center">
+                                    <span class="text-2xl font-bold text-white">TB</span>
+                                </div>
+                                <div>
+                                    <div class="text-xs opacity-80">TECH COMPANY</div>
+                                    <div class="font-semibold text-lg">TechBridge Africa</div>
+                                </div>
                             </div>
-                            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                                <i data-feather="building" class="w-6 h-6"></i>
+                            <div class="text-right">
+                                <div class="text-xs opacity-80">VALID THRU</div>
+                                <div class="font-medium">06/30/2027</div>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Passport Details -->
                     <div class="p-6">
-                        <div class="space-y-4">
-                            <div>
-                                <div class="text-xs text-slate-500">BUSINESS NAME</div>
-                                <div class="font-medium">TechBridge Africa</div>
+                        <div class="space-y-5">
+                            <!-- Business Info -->
+                            <div class="bg-slate-50 p-4 rounded-lg">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <div class="text-xs text-slate-500 font-medium mb-1">BUSINESS ID</div>
+                                        <div class="font-mono text-sm">TBA-2022-7890</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-slate-500 font-medium mb-1">INDUSTRY</div>
+                                        <div class="text-sm font-medium">Technology</div>
+                                    </div>
+                                    <div class="col-span-2">
+                                        <div class="text-xs text-slate-500 font-medium mb-1">LOCATION</div>
+                                        <div class="text-sm font-medium">Nairobi, Kenya</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="grid grid-cols-2 gap-4">
+                            
+                            <!-- Business Details -->
+                            <div class="space-y-3">
                                 <div>
-                                    <div class="text-xs text-slate-500">BUSINESS ID</div>
-                                    <div class="font-mono">TBA-2022-7890</div>
+                                    <div class="text-xs text-slate-500 font-medium mb-1">BUSINESS TYPE</div>
+                                    <div class="text-sm">Technology Solutions Provider</div>
                                 </div>
                                 <div>
-                                    <div class="text-xs text-slate-500">INDUSTRY</div>
-                                    <div class="font-medium">Technology</div>
+                                    <div class="text-xs text-slate-500 font-medium mb-1">TAX ID</div>
+                                    <div class="text-sm font-mono">P051TBA2022</div>
                                 </div>
                             </div>
-                            <div class="pt-4 border-t border-slate-100">
-                                <div class="flex items-center space-x-2 text-sm">
-                                    <i data-feather="check-circle" class="w-4 h-4 text-green-500"></i>
-                                    <span class="text-slate-600">Verified Business Registration</span>
+                            
+                            <!-- Verification Badge -->
+                            <div class="flex items-center justify-between bg-amber-50 p-3 rounded-lg">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center">
+                                        <i data-feather="shield" class="w-4 h-4 text-amber-600"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium text-amber-800">Verified Business</div>
+                                        <div class="text-xs text-amber-600">Registration confirmed</div>
+                                    </div>
                                 </div>
+                                <div class="text-xs text-amber-700 bg-white px-2 py-1 rounded-full font-medium">Premium</div>
+                            </div>
+                            
+                            <!-- QR Code -->
+                            <div class="bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-xl p-4 flex flex-col items-center justify-center shadow-sm">
+                                <div class="relative w-28 h-28 bg-white rounded-lg p-2 mb-3 shadow-inner border border-slate-100">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&margin=5&data=BUSINESS%20PASSPORT%20%7C%20DEMO%20ONLY%0A%0ACompany%3A%20TechBridge%20Africa%0AIndustry%3A%20Technology%20Solutions%0ALocation%3A%20Nairobi%2C%20Kenya%0ATAX%20ID%3A%20P051TBA2022%0AEstablished%3A%202020%0A%0A%2A%2A%2A%20DEMONSTRATION%20PURPOSES%20ONLY%20%2A%2A%2A%0AThis%20is%20a%20sample%20QR%20code%0A%0AIssued%20by%3A%20DigitalPassport" 
+                                         alt="Business Passport QR Code - Demo Only" 
+                                         class="w-full h-full object-contain">
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                                            <i data-feather="shield" class="w-4 h-4 text-indigo-600"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center text-xs text-slate-600">
+                                    <i data-feather="maximize-2" class="w-3 h-3 mr-1"></i>
+                                    <span>Scan to verify business</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Action Buttons -->
+                            <div class="grid grid-cols-2 gap-3 pt-2">
+                                <button class="text-xs font-medium text-emerald-600 hover:bg-emerald-50 py-2 rounded-lg transition-colors flex items-center justify-center space-x-1">
+                                    <i data-feather="eye" class="w-3.5 h-3.5"></i>
+                                    <span>View Details</span>
+                                </button>
+                                <button class="text-xs font-medium text-emerald-600 hover:bg-emerald-50 py-2 rounded-lg transition-colors flex items-center justify-center space-x-1">
+                                    <i data-feather="share-2" class="w-3.5 h-3.5"></i>
+                                    <span>Share</span>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Create Your Passport CTA -->
-            <div class="mt-20 text-center" data-aos="fade-up">
-                <h3 class="text-2xl font-bold text-slate-900 mb-6">Ready to Create Your DigitalPassport?</h3>
-                <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
-                    Join thousands of users who have already secured their digital identity. Get started in minutes.
-                </p>
+            <!-- View All Button -->
+            <div class="mt-16 text-center" data-aos="fade-up" data-aos-delay="300">
+                <button class="px-6 py-3 bg-white border-2 border-indigo-600 text-indigo-600 rounded-full font-medium hover:bg-indigo-50 transition-colors inline-flex items-center">
+                    View All Passport Types
+                    <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
                 <button id="openPassportForm" class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-3 rounded-full font-medium hover:opacity-90 transition-opacity">
                     Create Your Passport
                 </button>
@@ -1364,6 +1545,57 @@
         </div>
     </section>
 
+    <!-- Getting Started Section -->
+    <section id="getting-started" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-semibold mb-4">
+                    GET STARTED
+                </span>
+                <h2 class="text-4xl font-bold text-slate-900 mb-6">Create Your DigitalPassport in Minutes</h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    Follow these simple steps to get your digital identity up and running.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Step 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-xl font-bold mb-6">1</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Sign Up</h3>
+                    <p class="text-slate-600 mb-6">Create your account with your email and basic information.</p>
+                    <div class="h-1 w-12 bg-indigo-100 rounded-full mb-6"></div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-xl font-bold mb-6">2</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Verify Identity</h3>
+                    <p class="text-slate-600 mb-6">Complete our quick verification process to secure your identity.</p>
+                    <div class="h-1 w-12 bg-indigo-100 rounded-full mb-6"></div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-xl font-bold mb-6">3</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Start Using</h3>
+                    <p class="text-slate-600 mb-6">Access services and verify your identity seamlessly across platforms.</p>
+                    <div class="h-1 w-12 bg-indigo-100 rounded-full mb-6"></div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center" data-aos="fade-up" data-aos-delay="400">
+                <p class="text-slate-600 mb-8 max-w-2xl mx-auto">
+                    This is a demo of the getting started process. The actual DigitalPassport system will be launching soon with more features and capabilities.
+                </p>
+                <a href="#passports" class="inline-flex items-center px-8 py-4 border border-transparent text-base font-medium rounded-full text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:opacity-90 transition-opacity">
+                    See Sample Passports
+                    <i data-feather="arrow-right" class="w-5 h-5 ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Partners Section -->
     <section class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1462,6 +1694,266 @@
                         <p class="text-slate-300 text-sm">Support</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-semibold mb-4">
+                    SIMPLE, TRANSPARENT PRICING
+                </span>
+                <h2 class="text-4xl font-bold text-slate-900 mb-6">Affordable Plans for Everyone</h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">Choose the perfect plan for your needs. All plans include a 14-day free trial.</p>
+                
+                <!-- Billing Toggle -->
+                <div class="flex items-center justify-center mt-8 mb-12">
+                    <span class="text-slate-700 font-medium">Monthly</span>
+                    <div class="mx-4 relative">
+                        <input type="checkbox" id="billing-toggle" class="sr-only">
+                        <div class="w-14 h-8 flex items-center bg-slate-200 rounded-full p-1 cursor-pointer">
+                            <div class="bg-white w-6 h-6 rounded-full shadow-md transform transition-transform duration-300 ease-in-out"></div>
+                        </div>
+                    </div>
+                    <span class="text-slate-700 font-medium">Annually <span class="text-green-600">(Save 20%)</span></span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Free Plan -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow" data-aos="fade-up">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Starter</h3>
+                        <p class="text-slate-600 mb-6">Perfect for students and individuals getting started</p>
+                        <div class="flex items-baseline">
+                            <span class="monthly-price text-4xl font-bold text-slate-900">KSh 0</span>
+                            <span class="annual-price hidden text-4xl font-bold text-slate-900">KSh 0</span>
+                            <span class="text-slate-500 ml-2">/month</span>
+                        </div>
+                        <p class="monthly-note text-sm text-slate-500 mt-1">Free forever</p>
+                        <p class="annual-note hidden text-sm text-slate-500 mt-1">Free forever</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                            <span>Basic Digital Identity</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                            <span>Up to 3 Verifications</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                            <span>Email Support</span>
+                        </li>
+                        <li class="flex items-center text-slate-400">
+                            <i data-feather="x" class="w-5 h-5 mr-2"></i>
+                            <span>Advanced Analytics</span>
+                        </li>
+                        <li class="flex items-center text-slate-400">
+                            <i data-feather="x" class="w-5 h-5 mr-2"></i>
+                            <span>Priority Support</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 px-4 border-2 border-indigo-600 text-indigo-600 font-medium rounded-lg hover:bg-indigo-50 transition-colors">
+                        Get Started Free
+                    </button>
+                </div>
+
+                <!-- Popular Plan -->
+                <div class="bg-gradient-to-b from-indigo-50 to-white border-2 border-indigo-200 rounded-2xl p-8 shadow-lg transform scale-105 relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute top-0 right-0 bg-indigo-600 text-white text-xs font-bold px-4 py-1 rounded-bl-lg">
+                        MOST POPULAR
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Professional</h3>
+                        <p class="text-slate-600 mb-6">For professionals and growing businesses</p>
+                        <div class="flex items-baseline">
+                            <span class="monthly-price text-4xl font-bold text-slate-900">KSh 1,500</span>
+                            <span class="annual-price hidden text-4xl font-bold text-slate-900">KSh 1,250</span>
+                            <span class="text-slate-500 ml-2">/month</span>
+                        </div>
+                        <p class="monthly-note text-sm text-slate-500 mt-1">Billed monthly</p>
+                        <p class="annual-note hidden text-sm text-slate-500 mt-1">Billed annually at KSh 15,000 <span class="text-green-600">(Save 20%)</span></p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                            <span>Everything in Starter</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                            <span>Unlimited Verifications</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                            <span>Priority Email & Chat Support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                            <span>Basic Analytics</span>
+                        </li>
+                        <li class="flex items-center text-slate-400">
+                            <i data-feather="x" class="w-5 h-5 mr-2"></i>
+                            <span>Dedicated Account Manager</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 px-4 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors">
+                        Start 14-Day Free Trial
+                    </button>
+                </div>
+
+                <!-- Business Plan -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Enterprise</h3>
+                        <p class="text-slate-600 mb-6">For large organizations with custom needs</p>
+                        <div class="flex items-baseline">
+                            <span class="monthly-price text-4xl font-bold text-slate-900">KSh 5,000</span>
+                            <span class="annual-price hidden text-4xl font-bold text-slate-900">KSh 4,200</span>
+                            <span class="text-slate-500 ml-2">/month</span>
+                        </div>
+                        <p class="monthly-note text-sm text-slate-500 mt-1">Billed monthly</p>
+                        <p class="annual-note hidden text-sm text-slate-500 mt-1">Billed annually at KSh 50,400 <span class="text-green-600">(Save 20%)</span></p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                            <span>Everything in Professional</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                            <span>Dedicated Account Manager</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                            <span>Advanced Analytics & Reports</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                            <span>API Access</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="w-5 h-5 text-green-500 mr-2"></i>
+                            <span>Custom Integrations</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 px-4 border-2 border-indigo-600 text-indigo-600 font-medium rounded-lg hover:bg-indigo-50 transition-colors">
+                        Contact Sales
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <p class="text-slate-600 mb-4">Need a custom solution?</p>
+                <a href="#contact" class="text-indigo-600 font-medium hover:underline">Contact our sales team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold mb-4">
+                    LEARN & GROW
+                </span>
+                <h2 class="text-4xl font-bold text-slate-900 mb-6">Helpful Resources</h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">Everything you need to get the most out of your DigitalPassport</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Documentation -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow" data-aos="fade-up">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="book-open" class="w-6 h-6 text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Documentation</h3>
+                    <p class="text-slate-600 mb-4">Comprehensive guides and API references to help you integrate and use our platform.</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:underline inline-flex items-center">
+                        View Documentation
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Tutorials -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="video" class="w-6 h-6 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Video Tutorials</h3>
+                    <p class="text-slate-600 mb-4">Step-by-step video tutorials to help you master DigitalPassport features.</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:underline inline-flex items-center">
+                        Watch Tutorials
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- FAQ -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="help-circle" class="w-6 h-6 text-amber-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">FAQ</h3>
+                    <p class="text-slate-600 mb-4">Find answers to common questions about DigitalPassport and its features.</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:underline inline-flex items-center">
+                        View FAQ
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Blog -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow" data-aos="fade-up">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="edit-3" class="w-6 h-6 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Blog</h3>
+                    <p class="text-slate-600 mb-4">Stay updated with the latest news, tips, and success stories.</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:underline inline-flex items-center">
+                        Read Blog
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Webinars -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="tv" class="w-6 h-6 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Webinars</h3>
+                    <p class="text-slate-600 mb-4">Join our live webinars and learn from industry experts.</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:underline inline-flex items-center">
+                        View Schedule
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Community -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-feather="users" class="w-6 h-6 text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Community</h3>
+                    <p class="text-slate-600 mb-4">Connect with other users and share your experiences.</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:underline inline-flex items-center">
+                        Join Community
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <div class="inline-flex flex-col sm:flex-row items-center justify-center bg-white rounded-full shadow-sm p-1">
+                    <div class="relative w-full sm:w-auto">
+                        <input type="email" placeholder="Enter your email" class="w-full sm:w-96 px-6 py-3 rounded-full border-0 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                        <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-indigo-600 text-white rounded-full p-2 hover:bg-indigo-700 transition-colors">
+                            <i data-feather="arrow-right" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-500 mt-4">Subscribe to our newsletter for the latest updates and resources.</p>
             </div>
         </div>
     </section>
@@ -1622,8 +2114,46 @@
             }
         };
 
+        // Billing Toggle Functionality
+        function initBillingToggle() {
+            const toggle = document.getElementById('billing-toggle');
+            const toggleSwitch = toggle?.nextElementSibling;
+            const monthlyPrice = document.querySelectorAll('.monthly-price');
+            const annualPrice = document.querySelectorAll('.annual-price');
+            const annualNote = document.querySelectorAll('.annual-note');
+            const monthlyNote = document.querySelectorAll('.monthly-note');
+
+            if (!toggle || !toggleSwitch) return;
+
+            function updatePrices() {
+                const isAnnual = toggle.checked;
+                const toggleDot = toggleSwitch.querySelector('div');
+                
+                // Update toggle UI
+                toggleDot.style.transform = isAnnual ? 'translateX(1.5rem)' : 'translateX(0)';
+                
+                // Toggle price display
+                monthlyPrice.forEach(el => el.classList.toggle('hidden', isAnnual));
+                annualPrice.forEach(el => el.classList.toggle('hidden', !isAnnual));
+                annualNote.forEach(el => el.classList.toggle('hidden', !isAnnual));
+                monthlyNote.forEach(el => el.classList.toggle('hidden', isAnnual));
+            }
+
+            // Toggle on click
+            toggleSwitch.addEventListener('click', () => {
+                toggle.checked = !toggle.checked;
+                updatePrices();
+            });
+
+            // Initialize
+            updatePrices();
+        }
+
         // Initialize when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize billing toggle
+            initBillingToggle();
+            
             // Legal Documents Modal Handling
             const legalModal = document.getElementById('legalModal');
             const legalModalTitle = document.getElementById('legalModalTitle');
