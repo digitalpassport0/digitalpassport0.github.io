@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalPassport - Unlock Your Future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;        /* Modern Indigo */
+            --secondary: #8b5cf6;      /* Vibrant Purple */
+            --accent: #06b6d4;         /* Cyan Accent */
+            --success: #10b981;        /* Emerald */
+            --warning: #f59e0b;        /* Amber */
+            --dark: #0f172a;           /* Slate 900 */
+            --light: #f8fafc;          /* Slate 50 */
+            --glass: rgba(255, 255, 255, 0.1);
+            --glow: rgba(99, 102, 241, 0.4);
+        }
+        
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Advanced Gradient Animations */
+        .hero-gradient {
+            background: linear-gradient(135deg, 
+                var(--primary) 0%, 
+                var(--secondary) 25%,
+                var(--accent) 50%,
+                var(--secondary) 75%,
+                var(--primary) 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease-in-out infinite;
+            position: relative;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            25% { background-position: 100% 25%; }
+            50% { background-position: 100% 100%; }
+            75% { background-position: 0% 75%; }
+        }
+
+        /* Glassmorphism Effects */
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Premium Card Animations */
+        .premium-card {
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .premium-card:hover::before {
+            left: 100%;
+        }
+
+        .premium-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 30px 60px rgba(99, 102, 241, 0.2);
+            border-color: var(--glow);
+        }
+
+        /* Floating Animation */
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .float:nth-child(2) { animation-delay: -2s; }
+        .float:nth-child(3) { animation-delay: -4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(1deg); }
+            66% { transform: translateY(-10px) rotate(-1deg); }
+        }
+
+        /* Glowing Buttons */
+        .btn-glow {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-glow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn-glow:hover::before {
+            left: 100%;
+        }
+
+        .btn-glow:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Timeline Enhancements */
+        .timeline-connector {
+            background: linear-gradient(to bottom, var(--primary), var(--accent), var(--success));
+            width: 3px;
+            position: absolute;
+            left: 20px;
+            top: 40px;
+            height: calc(100% - 40px);
+            border-radius: 2px;
+            opacity: 0.8;
+        }
+
+        .timeline-dot {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: 0 0 20px var(--glow);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px var(--glow); }
+            50% { transform: scale(1.1); box-shadow: 0 0 30px var(--glow); }
+        }
+
+        /* Particle Background */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: particleFloat 20s infinite linear;
+        }
+
+        @keyframes particleFloat {
+            0% { 
+                transform: translateY(100vh) translateX(0px);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { 
+                transform: translateY(-100px) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        /* Advanced Hover Effects */
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 5s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            z-index: 1000;
+            transition: width 0.1s ease;
+        }
+
+        /* Team Card Special Effects */
+        .team-card {
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .team-card:hover::after {
+            opacity: 0.1;
+        }
+
+        .team-card:hover {
+            transform: scale(1.05) rotateY(5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Stats Counter Animation */
+        .stat-counter {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Interactive Background */
+        .interactive-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+            animation: bgFloat 10s ease-in-out infinite;
+        }
+
+        @keyframes bgFloat {
+            0%, 100% { 
+                background: 
+                    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                    radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+            }
+            50% { 
+                background: 
+                    radial-gradient(circle at 80% 20%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                    radial-gradient(circle at 20% 80%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                    radial-gradient(circle at 60% 60%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav fixed top-0 w-full z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center">
+                            <i data-feather="shield" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold gradient-text">DigitalPassport</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#solution" class="text-slate-700 hover:text-indigo-600 font-medium transition-colors">Solution</a>
+                    <a href="#process" class="text-slate-700 hover:text-indigo-600 font-medium transition-colors">Process</a>
+                    <a href="#impact" class="text-slate-700 hover:text-indigo-600 font-medium transition-colors">Impact</a>
+                    <a href="#team" class="text-slate-700 hover:text-indigo-600 font-medium transition-colors">Team</a>
+                    <button class="btn-glow px-6 py-2 rounded-full font-semibold">
+                        Get Started
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2 inline"></i>
+                    </button>
+                </div>
+
+                <button class="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors" id="mobileMenuBtn">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-xl z-40" id="mobileMenu">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <span class="text-xl font-bold gradient-text">Menu</span>
+                    <button class="p-2 hover:bg-slate-100 rounded-lg" id="closeMobileMenu">
+                        <i data-feather="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <nav class="space-y-4">
+                    <a href="#solution" class="block py-3 text-slate-700 hover:text-indigo-600 font-medium">Solution</a>
+                    <a href="#process" class="block py-3 text-slate-700 hover:text-indigo-600 font-medium">Process</a>
+                    <a href="#impact" class="block py-3 text-slate-700 hover:text-indigo-600 font-medium">Impact</a>
+                    <a href="#team" class="block py-3 text-slate-700 hover:text-indigo-600 font-medium">Team</a>
+                    <button class="btn-glow w-full py-3 mt-6 rounded-lg font-semibold">Get Started</button>
+                </nav>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- Particles Background -->
+        <div class="particles">
+            <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+            <div class="particle" style="left: 40%; animation-delay: 6s;"></div>
+            <div class="particle" style="left: 50%; animation-delay: 8s;"></div>
+            <div class="particle" style="left: 60%; animation-delay: 10s;"></div>
+            <div class="particle" style="left: 70%; animation-delay: 12s;"></div>
+            <div class="particle" style="left: 80%; animation-delay: 14s;"></div>
+            <div class="particle" style="left: 90%; animation-delay: 16s;"></div>
+        </div>
+
+        <!-- Interactive Background -->
+        <div class="interactive-bg"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center text-white">
+                <h1 class="text-5xl md:text-7xl font-black mb-8 leading-tight" data-aos="fade-up">
+                    Unlock Your
+                    <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300">Digital Future</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto text-slate-100 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+                    The first blockchain-powered identity passport designed for African youth. 
+                    <br class="hidden md:block">
+                    Prove your skills, showcase your work, access opportunities worldwide.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center" data-aos="fade-up" data-aos-delay="400">
+                    <button class="btn-glow px-8 py-4 rounded-full text-lg font-bold flex items-center">
+                        Create Your Passport
+                        <i data-feather="arrow-right" class="w-5 h-5 ml-2"></i>
+                    </button>
+                    <button class="glass-card px-8 py-4 rounded-full text-lg font-semibold text-white hover:bg-white hover:bg-opacity-20 transition-all flex items-center">
+                        <i data-feather="play-circle" class="w-5 h-5 mr-2"></i>
+                        Watch Demo
+                    </button>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-center">
+                        <div class="stat-counter mb-2">50K+</div>
+                        <p class="text-slate-200">Youth Empowered</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="stat-counter mb-2">150+</div>
+                        <p class="text-slate-200">Partner Organizations</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="stat-counter mb-2">25</div>
+                        <p class="text-slate-200">African Countries</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 float">
+            <div class="w-16 h-16 bg-white bg-opacity-10 rounded-full flex items-center justify-center">
+                <i data-feather="shield-check" class="w-8 h-8 text-white"></i>
+            </div>
+        </div>
+        <div class="absolute bottom-20 right-10 float">
+            <div class="w-20 h-20 bg-white bg-opacity-10 rounded-full flex items-center justify-center">
+                <i data-feather="globe" class="w-10 h-10 text-white"></i>
+            </div>
+        </div>
+        <div class="absolute top-1/3 right-20 float">
+            <div class="w-12 h-12 bg-white bg-opacity-10 rounded-full flex items-center justify-center">
+                <i data-feather="star" class="w-6 h-6 text-white"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-4 py-2 bg-red-100 text-red-700 rounded-full text-sm font-semibold mb-4">
+                    THE CHALLENGE
+                </span>
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">
+                    The Invisible Generation
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    Millions of talented African youth remain invisible to opportunities because they can't prove their worth in traditional ways.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="premium-card p-8 rounded-2xl hover-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl flex items-center justify-center mb-6">
+                        <i data-feather="briefcase" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Informal Economy</h3>
+                    <div class="text-4xl font-black text-red-500 mb-2">85%</div>
+                    <p class="text-slate-600">of African youth work informally with no verifiable employment records or career progression proof.</p>
+                </div>
+
+                <div class="premium-card p-8 rounded-2xl hover-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-yellow-600 rounded-xl flex items-center justify-center mb-6">
+                        <i data-feather="credit-card" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Financial Exclusion</h3>
+                    <div class="text-4xl font-black text-orange-500 mb-2">65%</div>
+                    <p class="text-slate-600">lack access to credit and financial services due to inability to prove creditworthiness.</p>
+                </div>
+
+                <div class="premium-card p-8 rounded-2xl hover-lift" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6">
+                        <i data-feather="award" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Skills Gap</h3>
+                    <div class="text-4xl font-black text-purple-500 mb-2">70%</div>
+                    <p class="text-slate-600">of skills learned through apprenticeships, community work, and creativity go unrecognized.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="py-24 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold mb-4">
+                    OUR SOLUTION
+                </span>
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 gradient-text">
+                    Your Digital Identity Passport
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    A comprehensive, blockchain-secured digital identity that captures the full spectrum of your abilities, experiences, and potential.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
+                                <i data-feather="book-open" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-2">Skills & Learning Portfolio</h3>
+                                <p class="text-slate-600">Digital certificates, video demonstrations of informal skills, peer validations, and continuous learning records.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
+                                <i data-feather="briefcase" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-2">Verified Work History</h3>
+                                <p class="text-slate-600">Blockchain-verified employment records, project outcomes, client testimonials, and performance ratings.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center">
+                                <i data-feather="trending-up" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-2">Financial Credibility Score</h3>
+                                <p class="text-slate-600">Alternative credit scoring based on mobile money patterns, savings group participation, and payment history.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-pink-500 to-rose-600 rounded-xl flex items-center justify-center">
+                                <i data-feather="image" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-2">Creative Showcase</h3>
+                                <p class="text-slate-600">Digital gallery for music, art, writing, and performances with engagement metrics and peer recognition.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative" data-aos="fade-left">
+                    <div class="glass-card p-8 rounded-3xl shadow-2xl">
+                        <div class="bg-gradient-to-r from-indigo-600 to-purple-600 p-6 rounded-2xl mb-6">
+                            <div class="flex items-center justify-between text-white mb-4">
+                                <h3 class="text-lg font-bold">Amara Okafor</h3>
+                                <div class="text-sm bg-white bg-opacity-20 px-3 py-1 rounded-full">Verified</div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <div class="text-white text-opacity-80">Skills Score</div>
+                                    <div class="text-xl font-bold">94/100</div>
+                                </div>
+                                <div>
+                                    <div class="text-white text-opacity-80">Credit Score</div>
+                                    <div class="text-xl font-bold">87/100</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                                        <i data-feather="code" class="w-4 h-4 text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-slate-900">Web Development</div>
+                                        <div class="text-sm text-slate-500">12 projects completed</div>
+                                    </div>
+                                </div>
+                                <div class="text-green-600 font-bold">Verified</div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
+                                        <i data-feather="camera" class="w-4 h-4 text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-slate-900">Digital Marketing</div>
+                                        <div class="text-sm text-slate-500">8 campaigns managed</div>
+                                    </div>
+                                </div>
+                                <div class="text-green-600 font-bold">Verified</div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center">
+                                        <i data-feather="dollar-sign" class="w-4 h-4 text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-slate-900">Financial Track Record</div>
+                                        <div class="text-sm text-slate-500">24 months verified</div>
+                                    </div>
+                                </div>
+                                <div class="text-green-600 font-bold">Active</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <div class="interactive-bg opacity-50"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="inline-block px-4 py-2 bg-indigo-600 bg-opacity-20 text-indigo-300 rounded-full text-sm font-semibold mb-4">
+                    HOW IT WORKS
+                </span>
+                <h2 class="text-4xl md:text-5xl font-black mb-6">
+                    Your Journey to
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Digital Recognition</span>
+                </h2>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto">
+                    Four simple steps to create your comprehensive digital identity passport and unlock global opportunities.
+                </p>
+            </div>
+
+            <div class="relative">
+                <div class="timeline-connector"></div>
+                
+                <div class="space-y-16">
+                    <!-- Step 1 -->
+                    <div class="relative pl-16" data-aos="fade-up">
+                        <div class="timeline-dot absolute left-0 top-6 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            1
+                        </div>
+                        <div class="glass-card p-8 rounded-2xl hover-lift">
+                            <div class="grid md:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <h3 class="text-2xl font-bold text-white mb-4">Secure Registration</h3>
+                                    <p class="text-slate-300 mb-6 leading-relaxed">
+                                        Sign up using your mobile device with biometric verification or government ID. 
+                                        Your digital identity is created using military-grade encryption and stored securely on our blockchain network.
+                                    </p>
+                                    <div class="flex items-center space-x-4">
+                                        <div class="flex items-center space-x-2 text-green-400">
+                                            <i data-feather="shield" class="w-4 h-4"></i>
+                                            <span class="text-sm">End-to-end encrypted</span>
+                                        </div>
+                                        <div class="flex items-center space-x-2 text-blue-400">
+                                            <i data-feather="smartphone" class="w-4 h-4"></i>
+                                            <span class="text-sm">Mobile-first design</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="relative">
+                                    <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-6 rounded-xl">
+                                        <div class="bg-white bg-opacity-10 rounded-lg p-4 mb-4">
+                                            <div class="flex items-center space-x-3 mb-3">
+                                                <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full"></div>
+                                                <div>
+                                                    <div class="h-3 bg-white bg-opacity-30 rounded w-24 mb-1"></div>
+                                                    <div class="h-2 bg-white bg-opacity-20 rounded w-16"></div>
+                                                </div>
+                                            </div>
+                                            <div class="space-y-2">
+                                                <div class="h-2 bg-white bg-opacity-20 rounded"></div>
+                                                <div class="h-2 bg-white bg-opacity-20 rounded w-3/4"></div>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-center">
+                                            <div class="bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm font-semibold">
+                                                Verified ✓
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative pl-16" data-aos="fade-up" data-aos-delay="200">
+                        <div class="timeline-dot absolute left-0 top-6 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            2
+                        </div>
+                        <div class="glass-card p-8 rounded-2xl hover-lift">
+                            <div class="grid md:grid-cols-2 gap-8 items-center">
+                                <div class="md:order-2">
+                                    <h3 class="text-2xl font-bold text-white mb-4">Build Your Profile</h3>
+                                    <p class="text-slate-300 mb-6 leading-relaxed">
+                                        Upload your achievements, work samples, and experiences through our intuitive interface. 
+                                        Support for videos, documents, images, and multimedia portfolios with AI-powered organization.
+                                    </p>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="text-center p-3 bg-white bg-opacity-10 rounded-lg">
+                                            <i data-feather="upload" class="w-6 h-6 mx-auto mb-2 text-cyan-400"></i>
+                                            <div class="text-sm text-slate-300">Multi-format uploads</div>
+                                        </div>
+                                        <div class="text-center p-3 bg-white bg-opacity-10 rounded-lg">
+                                            <i data-feather="brain" class="w-6 h-6 mx-auto mb-2 text-purple-400"></i>
+                                            <div class="text-sm text-slate-300">AI categorization</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="md:order-1">
+                                    <div class="bg-gradient-to-br from-cyan-500 to-blue-600 p-6 rounded-xl">
+                                        <div class="grid grid-cols-2 gap-3">
+                                            <div class="bg-white bg-opacity-20 rounded-lg p-3 text-center">
+                                                <i data-feather="file-text" class="w-8 h-8 mx-auto mb-2 text-white"></i>
+                                                <div class="text-xs text-white opacity-80">Certificates</div>
+                                            </div>
+                                            <div class="bg-white bg-opacity-20 rounded-lg p-3 text-center">
+                                                <i data-feather="video" class="w-8 h-8 mx-auto mb-2 text-white"></i>
+                                                <div class="text-xs text-white opacity-80">Skills Demo</div>
+                                            </div>
+                                            <div class="bg-white bg-opacity-20 rounded-lg p-3 text-center">
+                                                <i data-feather="image" class="w-8 h-8 mx-auto mb-2 text-white"></i>
+                                                <div class="text-xs text-white opacity-80">Portfolio</div>
+                                            </div>
+                                            <div class="bg-white bg-opacity-20 rounded-lg p-3 text-center">
+                                                <i data-feather="star" class="w-8 h-8 mx-auto mb-2 text-white"></i>
+                                                <div class="text-xs text-white opacity-80">Reviews</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative pl-16" data-aos="fade-up" data-aos-delay="400">
+                        <div class="timeline-dot absolute left-0 top-6 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            3
+                        </div>
+                        <div class="glass-card p-8 rounded-2xl hover-lift">
+                            <div class="grid md:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <h3 class="text-2xl font-bold text-white mb-4">Blockchain Verification</h3>
+                                    <p class="text-slate-300 mb-6 leading-relaxed">
+                                        Our network of 150+ trusted partners verify your credentials using advanced blockchain technology. 
+                                        Each verification creates an immutable, cryptographically secured record that can't be faked or tampered with.
+                                    </p>
+                                    <div class="space-y-3">
+                                        <div class="flex items-center space-x-3 text-green-400">
+                                            <i data-feather="check-circle" class="w-5 h-5"></i>
+                                            <span>Immutable verification records</span>
+                                        </div>
+                                        <div class="flex items-center space-x-3 text-blue-400">
+                                            <i data-feather="lock" class="w-5 h-5"></i>
+                                            <span>Cryptographic proof of authenticity</span>
+                                        </div>
+                                        <div class="flex items-center space-x-3 text-purple-400">
+                                            <i data-feather="eye-off" class="w-5 h-5"></i>
+                                            <span>Zero-knowledge privacy protection</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="relative">
+                                    <div class="bg-gradient-to-br from-emerald-500 to-teal-600 p-6 rounded-xl">
+                                        <div class="text-center mb-4">
+                                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full mx-auto mb-3 flex items-center justify-center">
+                                                <i data-feather="shield-check" class="w-8 h-8 text-white"></i>
+                                            </div>
+                                            <div class="text-white font-bold">Blockchain Verified</div>
+                                            <div class="text-white opacity-80 text-sm">Block #847392</div>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <div class="flex justify-between text-white text-sm">
+                                                <span>Hash:</span>
+                                                <span className="font-mono">0x7a8b...</span>
+                                            </div>
+                                            <div class="flex justify-between text-white text-sm">
+                                                <span>Timestamp:</span>
+                                                <span>2024-03-15</span>
+                                            </div>
+                                            <div class="flex justify-between text-white text-sm">
+                                                <span>Verifier:</span>
+
+                                                <span>TechSkills Africa</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative pl-16" data-aos="fade-up" data-aos-delay="600">
+                        <div class="timeline-dot absolute left-0 top-6 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            4
+                        </div>
+                        <div class="glass-card p-8 rounded-2xl hover-lift">
+                            <div class="grid md:grid-cols-2 gap-8 items-center">
+                                <div class="md:order-2">
+                                    <h3 class="text-2xl font-bold text-white mb-4">Access Opportunities</h3>
+                                    <p class="text-slate-300 mb-6 leading-relaxed">
+                                        Share your verified digital passport with employers, financial institutions, and opportunities worldwide. 
+                                        One QR code or link gives instant access to your complete, verified professional profile.
+                                    </p>
+                                    <div class="bg-white bg-opacity-10 rounded-lg p-4">
+                                        <div class="text-center">
+                                            <div class="w-24 h-24 bg-white bg-opacity-20 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                                                <i data-feather="qr-code" class="w-12 h-12 text-white"></i>
+                                            </div>
+                                            <div class="text-white font-semibold mb-1">Instant Share</div>
+                                            <div class="text-white opacity-80 text-sm">One-click verification access</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="md:order-1">
+                                    <div class="bg-gradient-to-br from-orange-500 to-pink-600 p-6 rounded-xl">
+                                        <div class="space-y-4">
+                                            <div class="bg-white bg-opacity-20 rounded-lg p-4 flex items-center space-x-3">
+                                                <i data-feather="briefcase" class="w-6 h-6 text-white"></i>
+                                                <div>
+                                                    <div class="text-white font-semibold">Job Applications</div>
+                                                    <div class="text-white opacity-80 text-sm">40% higher success rate</div>
+                                                </div>
+                                            </div>
+                                            <div class="bg-white bg-opacity-20 rounded-lg p-4 flex items-center space-x-3">
+                                                <i data-feather="credit-card" class="w-6 h-6 text-white"></i>
+                                                <div>
+                                                    <div class="text-white font-semibold">Financial Services</div>
+                                                    <div class="text-white opacity-80 text-sm">3x loan approval rate</div>
+                                                </div>
+                                            </div>
+                                            <div class="bg-white bg-opacity-20 rounded-lg p-4 flex items-center space-x-3">
+                                                <i data-feather="globe" class="w-6 h-6 text-white"></i>
+                                                <div>
+                                                    <div class="text-white font-semibold">Global Opportunities</div>
+                                                    <div class="text-white opacity-80 text-sm">25% more cross-border work</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="py-24 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white relative overflow-hidden">
+        <div class="interactive-bg opacity-30"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="inline-block px-4 py-2 bg-yellow-500 bg-opacity-20 text-yellow-300 rounded-full text-sm font-semibold mb-4">
+                    PROVEN RESULTS
+                </span>
+                <h2 class="text-4xl md:text-5xl font-black mb-6">
+                    Transforming Lives
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">Across Africa</span>
+                </h2>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto">
+                    Real impact, real stories, real opportunities unlocked for thousands of African youth.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="premium-card p-8 rounded-2xl text-center hover-lift" data-aos="fade-up">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="trending-up" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <div class="stat-counter text-green-400">40%</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Employment Boost</h3>
+                    <p class="text-slate-300">Higher job placement success rate for passport holders compared to traditional applications</p>
+                </div>
+
+                <div class="premium-card p-8 rounded-2xl text-center hover-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="dollar-sign" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <div class="stat-counter text-blue-400">3x</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Financial Access</h3>
+                    <p class="text-slate-300">More youth qualify for microloans and financial services using alternative credit scoring</p>
+                </div>
+
+                <div class="premium-card p-8 rounded-2xl text-center hover-lift" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="globe" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <div class="stat-counter text-purple-400">25%</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Global Reach</h3>
+                    <p class="text-slate-300">Increase in cross-border opportunities for creative and technical youth</p>
+                </div>
+            </div>
+
+            <!-- Success Stories -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 rounded-2xl hover-lift" data-aos="fade-right">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex-shrink-0"></div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-1">Kwame Asante</h4>
+                            <p class="text-slate-300 text-sm">Software Developer, Ghana</p>
+                            <div class="flex items-center space-x-1 mt-2">
+                                <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <blockquote class="text-slate-200 italic leading-relaxed">
+                        "My digital passport helped me land a remote job with a European startup. They could instantly verify my coding skills and previous project outcomes. Game changer!"
+                    </blockquote>
+                    <div class="mt-4 flex items-center space-x-4 text-sm text-slate-400">
+                        <span>💼 Remote Developer at TechEurope</span>
+                        <span>💰 3x salary increase</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl hover-lift" data-aos="fade-left">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full flex-shrink-0"></div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-1">Amina Diallo</h4>
+                            <p class="text-slate-300 text-sm">Creative Director, Senegal</p>
+                            <div class="flex items-center space-x-1 mt-2">
+                                <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <blockquote class="text-slate-200 italic leading-relaxed">
+                        "Through my creative portfolio on the platform, I secured funding for my design studio and now employ 12 other young creatives. The verified reviews made all the difference."
+                    </blockquote>
+                    <div class="mt-4 flex items-center space-x-4 text-sm text-slate-400">
+                        <span>🎨 Studio Owner</span>
+                        <span>👥 12 employees hired</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-semibold mb-4">
+                    OUR TEAM
+                </span>
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">Meet Our Leadership</h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">Passionate individuals driving innovation in digital identity solutions</p>
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">
+                    Meet the Visionaries
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    A diverse team of technologists, designers, and African development experts united by a common mission.
+                </p>
+            </div>
+            <!-- Team Members -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-16">
+                <!-- Team Member 1 -->
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up">
+                    <div class="flex justify-center pt-8">
+                        <div class="w-32 h-32 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+                            <span class="text-white text-3xl font-bold">PO</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900">Payone Ochola</h3>
+                        <p class="text-indigo-600 font-medium">Co-Founder & CEO</p>
+                        <p class="mt-3 text-slate-600 text-sm">Leading the vision and strategy of DigitalPassport</p>
+                        <a href="https://www.linkedin.com/in/payene-ochola-74222b383" target="_blank" class="mt-4 inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors">
+                            <i data-feather="linkedin" class="w-5 h-5 mr-1"></i>
+                            Connect on LinkedIn
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex justify-center pt-8">
+                        <div class="w-32 h-32 rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center">
+                            <span class="text-white text-3xl font-bold">CK</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900">Cassandra Kosgei</h3>
+                        <p class="text-indigo-600 font-medium">Co-Founder & COO</p>
+                        <p class="mt-3 text-slate-600 text-sm">Overseeing operations and community growth</p>
+                        <a href="https://www.linkedin.com/in/cassandra-kosgei-8311a1383" target="_blank" class="mt-4 inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors">
+                            <i data-feather="linkedin" class="w-5 h-5 mr-1"></i>
+                            Connect on LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-center pt-8">
+                        <div class="w-32 h-32 rounded-full bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center">
+                            <span class="text-white text-3xl font-bold">RW</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900">Rehema Wambui</h3>
+                        <p class="text-indigo-600 font-medium">Head of Operations</p>
+                        <p class="mt-3 text-slate-600 text-sm">Ensuring smooth operations and team coordination</p>
+                        <a href="https://www.linkedin.com/in/rehema-wambui-515977304" target="_blank" class="mt-4 inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors">
+                            <i data-feather="linkedin" class="w-5 h-5 mr-1"></i>
+                            Connect on LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex justify-center pt-8">
+                        <div class="w-32 h-32 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center">
+                            <span class="text-white text-3xl font-bold">MO</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900">Mwanaisha Omar</h3>
+                        <p class="text-indigo-600 font-medium">Head of Partnerships</p>
+                        <p class="mt-3 text-slate-600 text-sm">Building strategic relationships and collaborations</p>
+                        <a href="https://www.linkedin.com/in/mwanaisha-omar-7756a1311" target="_blank" class="mt-4 inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors">
+                            <i data-feather="linkedin" class="w-5 h-5 mr-1"></i>
+                            Connect on LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Team Member 5 -->
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-center pt-8">
+                        <div class="w-32 h-32 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
+                            <span class="text-white text-3xl font-bold">MJ</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900">Mercy Jepkogei</h3>
+                        <p class="text-indigo-600 font-medium">Partnerships Manager</p>
+                        <p class="mt-3 text-slate-600 text-sm">Engaging and growing our community of users</p>
+                        <a href="https://www.linkedin.com/in/mercy-jepkogei-6a614b383" target="_blank" class="mt-4 inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors">
+                            <i data-feather="linkedin" class="w-5 h-5 mr-1"></i>
+                            Connect on LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Advisory Board -->
+            <div class="mt-20" data-aos="fade-up">
+                <h3 class="text-2xl font-bold text-slate-900 text-center mb-12">Advisory Board</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">MK</span>
+                        </div>
+                        <h4 class="font-bold text-slate-900">Dr. Makena Kariuki</h4>
+                        <p class="text-slate-600 text-sm">Former World Bank Digital ID Lead</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-r from-violet-500 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">OA</span>
+                        </div>
+                        <h4 class="font-bold text-slate-900">Olumide Adeyemi</h4>
+                        <p class="text-slate-600 text-sm">Founder, African Fintech Alliance</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">ZM</span>
+                        </div>
+                        <h4 class="font-bold text-slate-900">Zara Mohamoud</h4>
+                        <p class="text-slate-600 text-sm">UN Youth Envoy for Digital Rights</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Passports Section -->
+    <section id="passports" class="py-24 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
+                    DIGITAL PASSPORT
+                </span>
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">
+                    Your Digital Identity, Securely Stored
+                </h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Our digital passports provide a secure, verifiable way to manage your identity and credentials
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Student Passport -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 to-indigo-700 p-6 flex flex-col justify-between text-white">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-2xl font-bold">Student</h3>
+                                <p class="text-blue-100">Digital Identity</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xs opacity-80">ISSUED BY</div>
+                                <div class="font-semibold">DigitalPassport</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="text-xs opacity-80">VALID THRU</div>
+                                <div class="font-semibold">09/30/2025</div>
+                            </div>
+                            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <i data-feather="user" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4">
+                            <div>
+                                <div class="text-xs text-slate-500">NAME</div>
+                                <div class="font-medium">Amina Nkosi</div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <div class="text-xs text-slate-500">STUDENT ID</div>
+                                    <div class="font-mono">STD-2023-4567</div>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-500">INSTITUTION</div>
+                                    <div class="font-medium">University of Nairobi</div>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-slate-100">
+                                <div class="flex items-center space-x-2 text-sm">
+                                    <i data-feather="shield" class="w-4 h-4 text-green-500"></i>
+                                    <span class="text-slate-600">Verified Academic Credentials</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Passport -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-gradient-to-br from-purple-600 to-pink-600 p-6 flex flex-col justify-between text-white">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-2xl font-bold">Professional</h3>
+                                <p class="text-purple-100">Digital Identity</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xs opacity-80">ISSUED BY</div>
+                                <div class="font-semibold">DigitalPassport</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="text-xs opacity-80">VALID THRU</div>
+                                <div class="font-semibold">12/15/2026</div>
+                            </div>
+                            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <i data-feather="briefcase" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4">
+                            <div>
+                                <div class="text-xs text-slate-500">NAME</div>
+                                <div class="font-medium">Kwame Osei</div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <div class="text-xs text-slate-500">PROFESSION</div>
+                                    <div class="font-medium">Software Engineer</div>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-500">LOCATION</div>
+                                    <div class="font-medium">Accra, Ghana</div>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-slate-100">
+                                <div class="flex items-center space-x-2 text-sm">
+                                    <i data-feather="award" class="w-4 h-4 text-yellow-500"></i>
+                                    <span class="text-slate-600">3+ Verified Certifications</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Passport -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-gradient-to-br from-emerald-600 to-teal-600 p-6 flex flex-col justify-between text-white">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-2xl font-bold">Business</h3>
+                                <p class="text-emerald-100">Digital Identity</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xs opacity-80">ISSUED BY</div>
+                                <div class="font-semibold">DigitalPassport</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="text-xs opacity-80">VALID THRU</div>
+                                <div class="font-semibold">06/30/2027</div>
+                            </div>
+                            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <i data-feather="building" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4">
+                            <div>
+                                <div class="text-xs text-slate-500">BUSINESS NAME</div>
+                                <div class="font-medium">TechBridge Africa</div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <div class="text-xs text-slate-500">BUSINESS ID</div>
+                                    <div class="font-mono">TBA-2022-7890</div>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-500">INDUSTRY</div>
+                                    <div class="font-medium">Technology</div>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-slate-100">
+                                <div class="flex items-center space-x-2 text-sm">
+                                    <i data-feather="check-circle" class="w-4 h-4 text-green-500"></i>
+                                    <span class="text-slate-600">Verified Business Registration</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Create Your Passport CTA -->
+            <div class="mt-20 text-center" data-aos="fade-up">
+                <h3 class="text-2xl font-bold text-slate-900 mb-6">Ready to Create Your DigitalPassport?</h3>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                    Join thousands of users who have already secured their digital identity. Get started in minutes.
+                </p>
+                <button id="openPassportForm" class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-3 rounded-full font-medium hover:opacity-90 transition-opacity">
+                    Create Your Passport
+                </button>
+                <p class="text-sm text-slate-500 mt-4">
+                    <i data-feather="info" class="w-4 h-4 inline-block mr-1"></i>
+                    This is a demo. Full system coming soon!
+                </p>
+            </div>
+
+            <!-- Passport Creation Form (Hidden by default) -->
+            <div id="passportForm" class="hidden mt-12 max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
+                <div class="flex justify-between items-center mb-8">
+                    <h3 class="text-2xl font-bold text-slate-900">Create Your DigitalPassport</h3>
+                    <button id="closePassportForm" class="text-slate-400 hover:text-slate-600">
+                        <i data-feather="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+
+                <form id="demoPassportForm" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+                        <input type="text" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="John Doe" required>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                            <input type="email" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="john@example.com" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">Phone</label>
+                            <input type="tel" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="+123 456 7890">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Passport Type</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-2">
+                            <label class="relative border rounded-lg p-4 cursor-pointer hover:bg-slate-50 transition-colors">
+                                <input type="radio" name="passportType" class="sr-only peer" value="student" checked>
+                                <div class="flex items-center">
+                                    <div class="w-5 h-5 rounded-full border-2 border-slate-300 peer-checked:border-indigo-600 flex-shrink-0 mr-3 flex items-center justify-center">
+                                        <div class="w-3 h-3 rounded-full bg-indigo-600 hidden peer-checked:block"></div>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium text-slate-900">Student</div>
+                                        <div class="text-sm text-slate-500">For educational credentials</div>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="relative border rounded-lg p-4 cursor-pointer hover:bg-slate-50 transition-colors">
+                                <input type="radio" name="passportType" class="sr-only peer" value="professional">
+                                <div class="flex items-center">
+                                    <div class="w-5 h-5 rounded-full border-2 border-slate-300 peer-checked:border-indigo-600 flex-shrink-0 mr-3 flex items-center justify-center">
+                                        <div class="w-3 h-3 rounded-full bg-indigo-600 hidden peer-checked:block"></div>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium text-slate-900">Professional</div>
+                                        <div class="text-sm text-slate-500">For work and skills</div>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="relative border rounded-lg p-4 cursor-pointer hover:bg-slate-50 transition-colors">
+                                <input type="radio" name="passportType" class="sr-only peer" value="business">
+                                <div class="flex items-center">
+                                    <div class="w-5 h-5 rounded-full border-2 border-slate-300 peer-checked:border-indigo-600 flex-shrink-0 mr-3 flex items-center justify-center">
+                                        <div class="w-3 h-3 rounded-full bg-indigo-600 hidden peer-checked:block"></div>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium text-slate-900">Business</div>
+                                        <div class="text-sm text-slate-500">For companies</div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="terms" name="terms" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-slate-300 rounded" required>
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="terms" class="font-medium text-slate-700">I agree to the <a href="#" class="text-indigo-600 hover:text-indigo-500">Terms of Service</a> and <a href="#" class="text-indigo-600 hover:text-indigo-500">Privacy Policy</a></label>
+                                <p class="text-slate-500">This is a demo form. No real data will be collected or stored.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex justify-end space-x-3">
+                        <button type="button" id="cancelPassportForm" class="px-4 py-2 border border-slate-300 rounded-lg text-slate-700 hover:bg-slate-50">
+                            Cancel
+                        </button>
+                        <button type="submit" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Create Passport
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Success Message (Hidden by default) -->
+            <div id="successMessage" class="hidden mt-12 max-w-2xl mx-auto text-center" data-aos="fade-up">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i data-feather="check" class="w-8 h-8 text-green-600"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-3">Thank You!</h3>
+                <p class="text-lg text-slate-600 mb-8">
+                    Your DigitalPassport request has been received. We'll be in touch soon with more details.
+                </p>
+                <p class="text-sm text-slate-500">
+                    Remember, this is just a demo. The full DigitalPassport system will be launching soon!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold mb-4">
+                    TRUSTED BY
+                </span>
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">
+                    Global Partners & Verifiers
+                </h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    150+ organizations across Africa and beyond trust our verification network
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-60">
+                <div class="text-center hover:opacity-100 transition-opacity">
+                    <div class="w-16 h-16 bg-slate-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                        <i data-feather="shield" class="w-8 h-8 text-slate-600"></i>
+                    </div>
+                    <p class="text-xs text-slate-500 font-medium">TechSkills Africa</p>
+                </div>
+                <div class="text-center hover:opacity-100 transition-opacity">
+                    <div class="w-16 h-16 bg-slate-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                        <i data-feather="bank" class="w-8 h-8 text-slate-600"></i>
+                    </div>
+                    <p class="text-xs text-slate-500 font-medium">Equity Bank</p>
+                </div>
+                <div class="text-center hover:opacity-100 transition-opacity">
+                    <div class="w-16 h-16 bg-slate-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                        <i data-feather="globe" class="w-8 h-8 text-slate-600"></i>
+                    </div>
+                    <p class="text-xs text-slate-500 font-medium">UN Women</p>
+                </div>
+                <div class="text-center hover:opacity-100 transition-opacity">
+                    <div class="w-16 h-16 bg-slate-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                        <i data-feather="code" class="w-8 h-8 text-slate-600"></i>
+                    </div>
+                    <p class="text-xs text-slate-500 font-medium">Andela</p>
+                </div>
+                <div class="text-center hover:opacity-100 transition-opacity">
+                    <div class="w-16 h-16 bg-slate-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                        <i data-feather="smartphone" class="w-8 h-8 text-slate-600"></i>
+                    </div>
+                    <p class="text-xs text-slate-500 font-medium">Safaricom</p>
+                </div>
+                <div class="text-center hover:opacity-100 transition-opacity">
+                    <div class="w-16 h-16 bg-slate-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                        <i data-feather="book" class="w-8 h-8 text-slate-600"></i>
+                    </div>
+                    <p class="text-xs text-slate-500 font-medium">Coursera</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900"></div>
+        <div class="interactive-bg opacity-40"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div data-aos="zoom-in">
+                <h2 class="text-4xl md:text-6xl font-black text-white mb-8 leading-tight">
+                    Ready to
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">
+                        Unlock Your Future?
+                    </span>
+                </h2>
+                <p class="text-xl text-slate-200 mb-12 max-w-2xl mx-auto leading-relaxed">
+                    Join 50,000+ African youth who have already transformed their opportunities with their digital passport.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <button class="btn-glow px-10 py-4 rounded-full text-lg font-bold flex items-center group">
+                        Create Your Passport Now
+                        <i data-feather="arrow-right" class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                    <button class="glass-card px-8 py-4 rounded-full text-lg font-semibold text-white hover:bg-white hover:bg-opacity-10 transition-all flex items-center">
+                        <i data-feather="calendar" class="w-5 h-5 mr-2"></i>
+                        Book a Demo
+                    </button>
+                </div>
+
+                <div class="mt-12 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-white mb-1">5 min</div>
+                        <p class="text-slate-300 text-sm">Setup time</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-white mb-1">Free</div>
+                        <p class="text-slate-300 text-sm">For youth</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-white mb-1">24/7</div>
+                        <p class="text-slate-300 text-sm">Support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-8 h-8 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center">
+                            <i data-feather="shield" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">DigitalPassport</span>
+                    </div>
+                    <p class="text-slate-300 mb-6 max-w-md">
+                        Empowering African youth through verified digital identity and blockchain-secured credentials.
+                    </p>
+                    <div class="flex space-x-4">
+                        <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors cursor-pointer">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </div>
+                        <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors cursor-pointer">
+                            <i data-feather="linkedin" class="w-5 h-5"></i>
+                        </div>
+                        <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors cursor-pointer">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </div>
+                        <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors cursor-pointer">
+                            <i data-feather="youtube" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Product</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Security</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">API</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Press</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-400 mb-4 md:mb-0">
+                    © 2024 DigitalPassport. All rights reserved.
+                </p>
+                <div class="flex space-x-6 text-sm">
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Passport Form Handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const openBtn = document.getElementById('openPassportForm');
+            const closeBtn = document.getElementById('closePassportForm');
+            const cancelBtn = document.getElementById('cancelPassportForm');
+            const passportForm = document.getElementById('passportForm');
+            const demoForm = document.getElementById('demoPassportForm');
+            const successMessage = document.getElementById('successMessage');
+            const ctaSection = document.querySelector('#passports .text-center');
+
+            // Open form
+            if (openBtn) {
+                openBtn.addEventListener('click', function() {
+                    ctaSection.classList.add('hidden');
+                    passportForm.classList.remove('hidden');
+                    passportForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+            }
+
+            // Close form
+            function closeForm() {
+                passportForm.classList.add('hidden');
+                ctaSection.classList.remove('hidden');
+                ctaSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+
+            if (closeBtn) closeBtn.addEventListener('click', closeForm);
+            if (cancelBtn) cancelBtn.addEventListener('click', closeForm);
+
+            // Form submission
+            if (demoForm) {
+                demoForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // Hide form and show success message
+                    passportForm.classList.add('hidden');
+                    successMessage.classList.remove('hidden');
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Reset form after showing success
+                    demoForm.reset();
+                    
+                    // After 5 seconds, reset everything
+                    setTimeout(() => {
+                        successMessage.classList.add('hidden');
+                        ctaSection.classList.remove('hidden');
+                        ctaSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 10000);
+                });
+            }
+        });
+
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out-cubic',
+            once: true,
+            offset: 50
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('mobile-menu');
+            mobileMenu.classList.add('open');
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('mobile-menu');
+            mobileMenu.classList.remove('open');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileMenu.classList.add('mobile-menu');
+                mobileMenu.classList.remove('open');
+            }
+        });
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        });
+
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('mobile-menu');
+                    mobileMenu.classList.remove('open');
+                }
+            });
+        });
+
+        // Counter Animation
+        const animateCounters = () => {
+            const counters = document.querySelectorAll('.stat-counter');
+            counters.forEach(counter => {
+                const target = counter.textContent;
+                let current = 0;
+                const increment = target.includes('%') ? 1 : Math.ceil(parseInt(target.replace(/\D/g, '')) / 100);
+                const duration = 2000;
+                const stepTime = duration / (parseInt(target.replace(/\D/g, '')) / increment);
+
+                const updateCounter = () => {
+                    if (current < parseInt(target.replace(/\D/g, ''))) {
+                        current += increment;
+                        if (target.includes('%')) {
+                            counter.textContent = current + '%';
+                        } else if (target.includes('x')) {
+                            counter.textContent = current + 'x';
+                        } else if (target.includes('K')) {
+                            counter.textContent = current + 'K+';
+                        } else {
+                            counter.textContent = current;
+                        }
+                        setTimeout(updateCounter, stepTime);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                updateCounter();
+            });
+        };
+
+        // Trigger counter animation when impact section is visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        const impactSection = document.getElementById('impact');
+        if (impactSection) {
+            observer.observe(impactSection);
+        }
+
+        // Add parallax effect to floating elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelectorAll('.float');
+            const speed = 0.5;
+
+            parallax.forEach(element => {
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+
+        // Enhanced hover effects for premium cards
+        document.querySelectorAll('.premium-card').forEach(card => {
+            card.addEventListener('mouseenter', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
